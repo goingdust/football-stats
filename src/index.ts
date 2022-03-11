@@ -7,4 +7,14 @@ const matches = fs
 	.split('\n')
 	.map((row: string): string[] => row.split(','));
 
-console.log(matches);
+let manUnitedWins = 0;
+
+matches.forEach(match => {
+	if (match[1] === 'Man United' && match[5] === 'H') {
+		manUnitedWins++;
+	} else if (match[2] === 'Man United' && match[5] === 'A') {
+		manUnitedWins++;
+	}
+});
+
+console.log(`Man United won ${manUnitedWins} games`);
