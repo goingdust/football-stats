@@ -4,10 +4,6 @@ exports.MatchReader = void 0;
 const CsvFileReader_1 = require("./CsvFileReader");
 const utils_1 = require("./utils");
 class MatchReader extends CsvFileReader_1.CsvFileReader {
-    constructor(filename) {
-        super(filename);
-        this.data.map(this.mapRow);
-    }
     mapRow(row) {
         return [
             (0, utils_1.dateStringToDate)(row[0]),

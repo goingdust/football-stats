@@ -29,7 +29,6 @@ class CsvFileReader {
     constructor(filename) {
         this.filename = filename;
         this.data = [];
-        this.read();
     }
     read() {
         this.data = fs

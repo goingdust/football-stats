@@ -1,13 +1,13 @@
 import * as fs from 'fs';
 
-export abstract class CsvFileReader {
+export abstract class CsvFileReader<T> {
 	data: string[][] = [];
 
-	constructor(public filename: string) {
-		this.read();
-	}
+	constructor(public filename: string) {}
 
-	private read(): void {
+	abstract mapRow(row: string[]): T;
+
+	read(): void {
 		this.data = fs
 			.readFileSync(this.filename, {
 				encoding: 'utf-8',
