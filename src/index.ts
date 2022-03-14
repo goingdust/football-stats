@@ -1,13 +1,7 @@
 import { CsvFileReader } from './CsvFileReader';
+import { MatchResult } from './MatchResult';
 
 const matches = new CsvFileReader('db/football.csv').data;
-
-// enum - enumeration
-enum MatchResult {
-	HomeWin = 'H',
-	AwayWin = 'A',
-	Draw = 'D',
-}
 
 let manUnitedWins = 0;
 
