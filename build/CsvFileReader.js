@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CsvFileReader = void 0;
 const fs = __importStar(require("fs"));
+const utils_1 = require("./utils");
 class CsvFileReader {
     constructor(filename) {
         this.filename = filename;
@@ -37,7 +38,16 @@ class CsvFileReader {
             encoding: 'utf-8',
         })
             .split('\n')
-            .map((row) => row.split(','));
+            .map((row) => row.split(','))
+            .map((row) => {
+            return [
+                (0, utils_1.dateStringToDate)(row[0]),
+                row[1],
+                row[2],
+                parseInt(row[3]),
+                parseInt(row[4]),
+            ];
+        });
     }
 }
 exports.CsvFileReader = CsvFileReader;
