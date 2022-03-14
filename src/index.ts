@@ -1,7 +1,7 @@
-import { CsvFileReader } from './CsvFileReader';
+import { MatchReader } from './MatchReader';
 import { MatchResult } from './MatchResult';
 
-const matches = new CsvFileReader('db/football.csv').data;
+const matches = new MatchReader('db/football.csv').data;
 
 let manUnitedWins = 0;
 
