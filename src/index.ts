@@ -1,5 +1,6 @@
 import { CsvFileReader } from './CsvFileReader';
-import { MatchReader, MatchData } from './MatchReader';
+import { MatchReader } from './MatchReader';
+import { MatchData } from './MatchData';
 import { MatchResult } from './MatchResult';
 
 const csvFileReader = new CsvFileReader('db/football.csv');
